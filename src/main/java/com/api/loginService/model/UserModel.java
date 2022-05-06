@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 
 @Data
 @NoArgsConstructor
-@Entity(name = "usuario_login")
+@Entity(name = "user_login")
 @EntityListeners(AuditingEntityListener.class)
 @Component
 public class UserModel {

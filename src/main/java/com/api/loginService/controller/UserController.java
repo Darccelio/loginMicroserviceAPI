@@ -21,13 +21,13 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @PostMapping("/login")
+    @PostMapping(value = "/login", produces="application/json")
     public ResponseEntity<UserModel> loginExecute(@RequestBody UserLoginRequest userRequest) {
         UserModel userLogged = userService.findUserByLogin(userRequest);
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(userLogged);
     }
     
-    @PostMapping("/createUser")
+    @PostMapping(value = "/createUser", produces="application/json")
     public ResponseEntity<NewUserResponse> createNewUser(@RequestBody NewUserRequest userRequest) {
         NewUserResponse user = userService.createUser(userRequest);
         return ResponseEntity.status(HttpStatus.CREATED).body(user);
